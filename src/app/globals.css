@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 228, 230;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+/* Leaflet styles */
+.leaflet-container {
+  height: 400px;
+  width: 100%;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.leaflet-control-zoom a {
+  width: 24px !important;
+  height: 24px !important;
+  line-height: 24px !important;
+  font-size: 16px !important;
+}
