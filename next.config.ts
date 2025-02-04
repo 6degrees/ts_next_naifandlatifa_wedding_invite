@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next'
+import path from 'path';
 
 const config: NextConfig = {
   output: 'export',
@@ -7,6 +8,11 @@ const config: NextConfig = {
   },
   assetPrefix: process.env.NODE_ENV === 'production' ? '/' : '/',
   trailingSlash: true,
+  webpack: (config) => {
+    config.resolve.alias['@radix-ui/react-tabs'] = path.resolve(__dirname, 'node_modules/@radix-ui/react-tabs');
+    return config;
+  },
+
 }
 
 export default config

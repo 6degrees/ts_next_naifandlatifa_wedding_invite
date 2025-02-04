@@ -9,7 +9,7 @@ const poppins = Poppins({
 export default function Footer() {
   return (
     <footer className="py-8 text-center text-empress">
-      <p className={`${poppins.className} text-sm`}>
+      <p className="text-sm">
         Prepared with{" "}
         <span role="img" aria-label="heart" className="text-red-500">
           ❤️

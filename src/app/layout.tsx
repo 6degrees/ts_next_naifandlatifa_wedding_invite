@@ -1,20 +1,10 @@
 import "./globals.css"
-import { Noto_Kufi_Arabic, Aref_Ruqaa, Lateef } from "next/font/google"
-import type React from "react" // Import React
+import { Rubik } from "next/font/google"
+import type React from "react"
 import { Metadata } from "next"
+import { Viewport } from 'next'
 
-const notoKufiArabic = Noto_Kufi_Arabic({
-  subsets: ["arabic"],
-  display: "swap",
-})
-
-const arefRuqaa = Aref_Ruqaa({
-  subsets: ["arabic"],
-  weight: "400",
-  display: "swap",
-})
-
-const lateef = Lateef({
+const rubik = Rubik({
   subsets: ["arabic"],
   weight: "400",
   display: "swap",
@@ -58,24 +48,23 @@ export const metadata: Metadata = {
     address: false,
     email: false,
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
-  themeColor: '#7D7175',
   manifest: '/manifest.json',
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: '#7D7175',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ar" dir="rtl">
       <head>
-      <meta name="apple-mobile-web-app-title" content="Naif&Latifa" />
-
-
+        <meta name="apple-mobile-web-app-title" content="Naif&Latifa" />
       </head>
-      <body className={lateef.className}>{children}</body>
+      <body className={rubik.className}>{children}</body>
     </html>
   )
 }

@@ -1,12 +1,5 @@
 import { Card, CardHeader } from "@/components/ui/card"
-import { Aref_Ruqaa } from "next/font/google"
 import { attractions } from "@/data/attractions"
-
-const arefRuqaa = Aref_Ruqaa({
-  subsets: ["arabic"],
-  weight: "400",
-  display: "swap",
-})
 
 export default function AttractionCard() {
   const getLocationUrl = (attraction: typeof attractions[0]) => {
@@ -16,9 +9,6 @@ export default function AttractionCard() {
 
   return (
     <div id="attractions" className="space-y-6">
-      <h2 className={`${arefRuqaa.className} text-3xl text-center text-empress-600`}>
-        معالم سياحية قريبة
-      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {attractions.map((attraction) => (
           <a
@@ -26,19 +16,19 @@ export default function AttractionCard() {
             href={getLocationUrl(attraction)}
             target="_blank"
             rel="noopener noreferrer"
-            className="block transform transition-transform hover:scale-105"
+            className="block transition-transform duration-300 ease-in-out hover:scale-105"
           >
             <Card className="relative h-48 overflow-hidden rounded-xl">
               {/* Background Image */}
               <div
-                className="absolute inset-0 bg-cover bg-center"
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-in-out"
                 style={{ backgroundImage: `url(${attraction.image})` }}
               />
               {/* Dark Overlay */}
               <div className="absolute inset-0 bg-black/50" />
               {/* Content */}
               <CardHeader className="relative h-full flex items-center justify-center">
-                <h3 className={`${arefRuqaa.className} text-2xl text-white text-center`}>
+                <h3 className="text-2xl text-white text-center">
                   {attraction.name}
                 </h3>
               </CardHeader>

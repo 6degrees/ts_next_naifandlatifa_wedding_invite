@@ -40,10 +40,11 @@ export default function CountdownTimer() {
   }, [])
 
   return (
-    <Card className="mb-8 rounded-xl bg-empress-50/50">
+    <Card dir="rtl" className="mb-8 rounded-xl bg-empress-50/50">
       <CardContent className="p-6">
         <div className="grid grid-cols-4 gap-4 text-center">
           <div className="flex flex-col">
+
             <span className="text-4xl font-bold text-empress-600">{timeLeft.days}</span>
             <span className="text-sm text-empress">يوم</span>
           </div>
