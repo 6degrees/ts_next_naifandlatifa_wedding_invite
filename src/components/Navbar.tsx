@@ -13,22 +13,22 @@ export default function Navbar() {
         <ul className={`${lateef.className} flex justify-center space-x-12 space-x-reverse py-4 text-empress-600 text-xl`}>
           <li>
             <a href="#accommodation" className="hover:text-empress-800 transition-colors">
-              الإقامة
+              تفاصيل الحفل
             </a>
           </li>
           <li>
             <a href="#location" className="hover:text-empress-800 transition-colors">
-              الموقع
+              السفر والإقامة
             </a>
           </li>
-          <li>
+          {/* <li>
             <a href="#attractions" className="hover:text-empress-800 transition-colors">
               معالم سياحية
             </a>
-          </li>
+          </li> */}
           <li>
             <a href="#salons" className="hover:text-empress-800 transition-colors">
-              صالونات
+              صالونات التجميل والتصفيف
             </a>
           </li>
         </ul>
