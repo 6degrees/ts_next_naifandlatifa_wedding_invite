@@ -1,4 +1,5 @@
 import "./globals.css"
+import "../styles/fonts.css";
 import { Rubik } from "next/font/google"
 import type React from "react"
 import { Metadata } from "next"
