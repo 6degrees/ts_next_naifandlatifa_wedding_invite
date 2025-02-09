@@ -1,38 +1,58 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import Background from "@/components/Background"; // ✅ Import the background
+import { motion } from "framer-motion";
+import Background from "@/components/Background";
 
 export default function LandingPage() {
   const router = useRouter();
 
+  const handleLanguageSelection = (lang: string) => {
+    router.push(`/${lang}`);
+  };
+
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen text-white">
-      {/* Background Video */}
+    <motion.div
+      initial={{ opacity: 0 }}         
+      animate={{ opacity: 1 }}          
+      exit={{ opacity: 0 }}            
+      transition={{ duration: 0.9 }}     
+      className="relative flex flex-col items-center justify-center min-h-screen text-white"
+    >
+
       <Background />
 
-      {/* Content */}
+   
       <div className="relative z-10 flex flex-col items-center">
-        {/* Logo (Smaller Size) */}
-        <img src="/logo.png" alt="Wedding Logo" className="w-36 h-auto mb-6" />
+        <motion.img
+          src="/logo.png"
+          alt="Wedding Logo"
+          className="w-36 h-auto mb-6"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        />
 
-        {/* Language Selection Buttons */}
         <div className="flex gap-6">
-          <button
+          <motion.button
             className="px-6 py-3 text-lg font-semibold text-black bg-white-700 border border-white rounded-lg transition hover:bg-white hover:text-black"
-            onClick={() => router.push("/ar")}
+            onClick={() => handleLanguageSelection("ar")}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
           >
             العربية
-          </button>
+          </motion.button>
 
-          <button
+          <motion.button
             className="px-6 py-3 text-lg font-semibold text-black bg-white-700 border border-white rounded-lg transition hover:bg-white hover:text-black"
-            onClick={() => router.push("/en")}
+            onClick={() => handleLanguageSelection("en")}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
           >
             English
-          </button>
+          </motion.button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
