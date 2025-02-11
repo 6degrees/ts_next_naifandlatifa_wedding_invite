@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { invitationData } from "@/data/invitation"
+import {useTranslation} from "react-i18next";
 
 type TimeLeft = {
   days: number
@@ -11,6 +12,7 @@ type TimeLeft = {
 }
 
 export default function CountdownTimer() {
+  const { t } = useTranslation();
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 })
 
   useEffect(() => {
@@ -46,19 +48,19 @@ export default function CountdownTimer() {
           <div className="flex flex-col">
 
             <span className="text-4xl font-bold text-empress-600">{timeLeft.days}</span>
-            <span className="text-sm text-empress">يوم</span>
+            <span className="text-sm text-empress">{t('countdown.days')}</span>
           </div>
           <div className="flex flex-col">
             <span className="text-4xl font-bold text-empress-600">{timeLeft.hours}</span>
-            <span className="text-sm text-empress">ساعة</span>
+            <span className="text-sm text-empress">{t('countdown.hours')}</span>
           </div>
           <div className="flex flex-col">
             <span className="text-4xl font-bold text-empress-600">{timeLeft.minutes}</span>
-            <span className="text-sm text-empress">دقيقة</span>
+            <span className="text-sm text-empress">{t('countdown.minutes')}</span>
           </div>
           <div className="flex flex-col">
             <span className="text-4xl font-bold text-empress-600">{timeLeft.seconds}</span>
-            <span className="text-sm text-empress">ثانية</span>
+            <span className="text-sm text-empress">{t('countdown.seconds')}</span>
           </div>
         </div>
       </CardContent>

@@ -1,11 +1,10 @@
 import "./globals.css";
 import "../styles/fonts.css";
 import type React from "react";
-import { Metadata } from "next";
-import i18next from "i18next";
+import {Metadata} from "next";
+import i18n from "i18next";
 import {AppProvider} from "@/context/AppContext";
 import I18nProvider from "@/components/I18nProvider";
-
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://naifandlatifa.com"),
@@ -36,7 +35,7 @@ export const metadata: Metadata = {
   },
   applicationName: "نايف ولطيفة",
   keywords: ["دعوة زفاف", "نايف", "لطيفة", "زفاف", "حفل زفاف", "فندق نايل ريتز كارلتون", "القاهرة"],
-  authors: [{ name: "6degrees", url: "https://6degrees.com.sa" }],
+  authors: [{name: "6degrees", url: "https://6degrees.com.sa"}],
   creator: "6degrees",
   publisher: "6degrees",
   formatDetection: {
@@ -48,15 +47,13 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const currentLang = i18next.language || "ar";
-  const dir = currentLang === "ar" ? "rtl" : "ltr";
-
+export default function RootLayout({children}: { children: React.ReactNode }) {
   return (
       <AppProvider>
-        <html lang={currentLang} dir={dir}>
+        <html lang={i18n.language || "ar"} dir={i18n.language === "en" ? "ltr" : "rtl"}>
         <head>
-          <meta name="apple-mobile-web-app-title" content="Naif&Latifa" />
+          <title></title>
+          <meta name="apple-mobile-web-app-title" content="Naif&Latifa"/>
         </head>
         <body>
         <I18nProvider>{children}</I18nProvider>
