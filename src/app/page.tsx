@@ -14,20 +14,15 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Navbar from "@/components/Navbar";
 import { AnimatePresence } from "framer-motion";
 import Background from "@/components/Background";
+import {useAppContext} from "@/context/AppContext";
 
 export default function Home() {
-  const [showLanding, setShowLanding] = useState(true);
+  const { selectedLanguage, } = useAppContext();
 
-  useEffect(() => {
-    const selectedLanguage = localStorage.getItem("selectedLanguage");
-    if (selectedLanguage) {
-      setShowLanding(false);
-    }
-  }, []);
 
   return (
     <main className="min-h-screen relative">
-      {showLanding ? (
+      {!selectedLanguage ? (
         <LandingPage />
       ) : (
         <>
