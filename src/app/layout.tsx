@@ -1,11 +1,11 @@
 import "./globals.css";
 import "../styles/fonts.css";
-import "../lib/i18n";  // Import your i18n configuration
 import type React from "react";
 import { Metadata } from "next";
-import i18next from "i18next"; // Access the current language
-import { I18nextProvider } from 'react-i18next';
-import i18n from '../lib/i18';
+import i18next from "i18next";
+import {AppProvider} from "@/context/AppContext";
+import I18nProvider from "@/components/I18nProvider";
+
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://naifandlatifa.com"),
@@ -49,19 +49,19 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const currentLang = i18next.language || "ar";  // Get the current language
-  const dir = currentLang === "ar" ? "rtl" : "ltr";  // Set direction based on language
+  const currentLang = i18next.language || "ar";
+  const dir = currentLang === "ar" ? "rtl" : "ltr";
 
   return (
-    <html lang={currentLang} dir={dir}>
-      <head>
-        <meta name="apple-mobile-web-app-title" content="Naif&Latifa" />
-      </head>
-      <body>
-        <I18nextProvider i18n={i18n}>
-          {children}
-        </I18nextProvider>
-      </body>
-    </html>
+      <AppProvider>
+        <html lang={currentLang} dir={dir}>
+        <head>
+          <meta name="apple-mobile-web-app-title" content="Naif&Latifa" />
+        </head>
+        <body>
+        <I18nProvider>{children}</I18nProvider>
+        </body>
+        </html>
+      </AppProvider>
   );
 }
