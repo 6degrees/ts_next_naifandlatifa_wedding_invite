@@ -42,4 +42,16 @@ export default {
         gratitude: "شاكرين لكم تلبية الدعوة",
         addToCalendar: "إضافة إلى التقويم",
     },
+    accommodation: {
+        specialDiscount: "خصم خاص",
+        discountDetails: "خصم خاص على الحجوزات في فندق نايل ريتز كارلتون، القاهرة"
+    },
+    location: {
+        getDirections: "الحصول على الاتجاهات"
+    },
+    footer: {
+        preparedWith: "أُعدَّ بكل",
+        by: "بواسطة",
+        company: "الدرجات الست",
+    }
 };

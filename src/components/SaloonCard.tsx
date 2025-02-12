@@ -1,7 +1,11 @@
 import { Card, CardHeader } from "@/components/ui/card"
 import { salons } from "@/data/salons"
+import {useAppContext} from "@/context/AppContext";
 
 export default function SaloonCard() {
+  const { selectedLanguage, } = useAppContext();
+
+
   const getLocationUrl = (salon: typeof salons[0]) => {
     if (salon.link) return salon.link
     return `https://www.google.com/maps/search/?api=1&query=${salon.location.lat},${salon.location.lng}`
@@ -12,7 +16,7 @@ export default function SaloonCard() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {salons.map((salon) => (
           <a
-            key={salon.name}
+            key={salon.name['en']}
             href={getLocationUrl(salon)}
             target="_blank"
             rel="noopener noreferrer"
@@ -32,7 +36,7 @@ export default function SaloonCard() {
               {/* Content */}
               <CardHeader className="relative h-full flex items-center justify-center">
                 <h3 className="text-2xl text-white text-center">
-                  {salon.name}
+                  {salon.name[selectedLanguage]}
                 </h3>
               </CardHeader>
             </Card>

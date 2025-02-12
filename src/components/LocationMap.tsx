@@ -5,8 +5,10 @@ import { Button } from "@/components/ui/button";
 import { invitationData } from "@/data/invitation";
 import * as maptilersdk from '@maptiler/sdk';
 import '@maptiler/sdk/dist/maptiler-sdk.css';
+import {useTranslation} from "react-i18next";
 
 export default function LocationMap() {
+    const { t } = useTranslation();
     const [isHovered, setIsHovered] = useState(false);
     const { location } = invitationData;
     const mapContainer = useRef<HTMLDivElement>(null);
@@ -74,7 +76,7 @@ export default function LocationMap() {
                                 target="_blank" 
                                 rel="noopener noreferrer"
                             >
-                                الحصول على الاتجاهات
+                                {t("location.getDirections")}
                             </a>
                         </Button>
                     </div>

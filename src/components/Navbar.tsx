@@ -1,4 +1,5 @@
 import { Lateef } from "next/font/google"
+import {useTranslation} from "react-i18next";
 
 const lateef = Lateef({
   subsets: ["arabic"],
@@ -7,18 +8,20 @@ const lateef = Lateef({
 })
 
 export default function Navbar() {
+  const { t} = useTranslation();
+
   return (
     <nav className="top-0 z-50">
       <div className="container mx-auto px-4">
         <ul className={`${lateef.className} flex justify-center space-x-12 space-x-reverse py-4 text-empress-600 text-xl`}>
           <li>
             <a href="#accommodation" className="hover:text-empress-800 transition-colors">
-              تفاصيل الحفل
+              {t('nav.accommodation')}
             </a>
           </li>
           <li>
             <a href="#location" className="hover:text-empress-800 transition-colors">
-              السفر والإقامة
+              {t('nav.salons')}
             </a>
           </li>
           {/* <li>
@@ -28,7 +31,7 @@ export default function Navbar() {
           </li> */}
           <li>
             <a href="#salons" className="hover:text-empress-800 transition-colors">
-              صالونات التجميل والتصفيف
+              {t('nav.salons')}
             </a>
           </li>
         </ul>

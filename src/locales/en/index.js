@@ -21,9 +21,9 @@ export default {
         hostsIntro: "We are honored to invite you",
         and: "&",
         eventIntro: "to the wedding ceremony of",
-        bintOf : "Bint {{name}}",
-        binOf : "Bin {{name}}",
-        on : "&",
+        bintOf: "Bint {{name}}",
+        binOf: "Bin {{name}}",
+        on: "&",
         eventDetails: {
             dateIntro: "{{date}} On",
             timeIntro: "at {{time}}",
@@ -41,5 +41,17 @@ export default {
         },
         gratitude: "We appreciate your presence",
         addToCalendar: "Add to Calendar",
+    },
+    accommodation: {
+        specialDiscount: "Special Discount",
+        discountDetails: "Exclusive discount on reservations at The Nile Ritz-Carlton, Cairo"
+    },
+    location: {
+        getDirections: "Get Directions"
+    },
+    footer: {
+        preparedWith: "Prepared with",
+        by: "by",
+        company: "6 Degrees",
     },
 };

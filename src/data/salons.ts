@@ -13,7 +13,10 @@ type Salon = {
 
 export const salons: Salon[] = [
   {
-    name: "Toi",
+    name: {
+      en: "Toi",
+      ar: "توي"
+    },
     image: "https://lh5.googleusercontent.com/p/AF1QipNkeXLbu48hCJeN5cpi-iYwHJTu5fbRhahdYDwT=s1536",
     location: {
       lat: 30.0706465,
@@ -23,7 +26,10 @@ export const salons: Salon[] = [
     link: "https://maps.app.goo.gl/Z95tDWYy3Kp1Rx678"
   },
   {
-    name: "Zoya",
+    name: {
+      en: "Zoya",
+      ar: "زويا"
+    },
     image: "https://lh5.googleusercontent.com/p/AF1QipOvba8kIU7Ggh8Msv5WD34ocV50PVKzCmsH2crw=s1536",
     location: {
       lat: 30.0284096,
@@ -32,9 +38,11 @@ export const salons: Salon[] = [
     },
     link: "https://maps.app.goo.gl/TMyFfyJYvFMzbiB99"
   },
-
   {
-    name: "Beauty Bar",
+    name: {
+      en: "Beauty Bar",
+      ar: "بيوتي بار"
+    },
     image: "https://lh5.googleusercontent.com/p/AF1QipOGDER3SFCUGgum-9XSP67AmZveFjw2RwRY2iu5=s406-k-no",
     location: {
       lat: 30.0434,
@@ -43,10 +51,11 @@ export const salons: Salon[] = [
     },
     link: "https://maps.app.goo.gl/t89EyXUmi3SBDSAc8"
   },
-  
-
   {
-    name: "صالون النجوم",
+    name: {
+      en: "Stars Beauty Lounge",
+      ar: "صالون النجوم"
+    },
     image: "https://www.insideedition.com/sites/default/files/images/2020-05/salon.jpg",
     location: {
       lat: 30.0424,
