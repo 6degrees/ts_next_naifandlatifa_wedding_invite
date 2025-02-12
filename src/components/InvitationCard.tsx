@@ -41,7 +41,7 @@ export default function InvitationCard() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         />
-            <p className="font-medium">{t("invitation.hostsIntro")}</p>
+            <p className="font-medium font-arbMuslimah">{t("invitation.hostsIntro")}</p>
                 <div>
                     <div className="flex items-center text-center justify-center gap-6 lg:gap-16">
                         {/* <p className="font-medium text-empress-700">{hosts.first[selectedLanguage]}</p>
@@ -49,7 +49,7 @@ export default function InvitationCard() {
                         <p className="font-medium text-empress-700">{hosts.second[selectedLanguage]}</p> */}
                     </div>
                 </div>
-                <p className="">{t("invitation.eventIntro")}</p>
+                <p className="font-arbMuslimah">{t("invitation.eventIntro")}</p>
                 <div>
                     <div className="flex justify-center items-center gap-6 lg:gap-12">
                         {/* <div className=" text-empress-700">
@@ -68,9 +68,9 @@ export default function InvitationCard() {
                     <p> {t("invitation.eventDetails.timeIntro", {"time": `${event.time[selectedLanguage]}`})}</p>
                     <p> {t("invitation.eventDetails.locationIntro", {"location": `${event.venue.name[selectedLanguage]} ${event.venue.city[selectedLanguage]} ${event.venue.country[selectedLanguage]}`})}</p> */}
                 </div>
-                <p className=" mt-6">{t("invitation.gratitude")}</p>
+                <p className="font-arbMuslimah mt-6">{t("invitation.gratitude")}</p>
                 <div className="flex justify-center">
-                    <Button onClick={handleAddToCalendar} variant="outline" className="gap-2 text-empress-600 hover:text-empress-700">
+                    <Button onClick={handleAddToCalendar} variant="outline" className="gap-2 text-empress-600 hover:text-empress-700 font-arbMuslimah">
                         <Calendar className="h-5 w-5" />
                         {t("invitation.addToCalendar")}
                     </Button>

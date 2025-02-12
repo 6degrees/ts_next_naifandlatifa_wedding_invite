@@ -48,19 +48,19 @@ export default function CountdownTimer() {
         <div className="grid grid-cols-4 gap-4 text-center">
           <div className="flex flex-col">
 
-            <span className="text-4xl font-bold text-empress-600">{timeLeft.days}</span>
+            <span className="text-4xl font-bold text-empress-600 font-arbMuslimah">{timeLeft.days}</span>
             <span className="text-sm text-empress">{t('countdown.days')}</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-4xl font-bold text-empress-600">{timeLeft.hours}</span>
+            <span className="text-4xl font-bold text-empress-600 font-arbMuslimah">{timeLeft.hours}</span>
             <span className="text-sm text-empress">{t('countdown.hours')}</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-4xl font-bold text-empress-600">{timeLeft.minutes}</span>
+            <span className="text-4xl font-bold text-empress-600 font-arbMuslimah">{timeLeft.minutes}</span>
             <span className="text-sm text-empress">{t('countdown.minutes')}</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-4xl font-bold text-empress-600">{timeLeft.seconds}</span>
+            <span className="text-4xl font-bold text-empress-600 font-arbMuslimah">{timeLeft.seconds}</span>
             <span className="text-sm text-empress">{t('countdown.seconds')}</span>
           </div>
         </div>

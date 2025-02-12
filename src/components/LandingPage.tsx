@@ -38,7 +38,7 @@ export default function LandingPage() {
 
         <div className="flex gap-6">
           <motion.button
-            className="px-6 py-3 text-lg font-semibold text-black bg-white-700 border border-white rounded-lg transition hover:bg-white hover:text-black"
+            className="px-6 py-3 text-lg font-semibold text-black bg-white-700 border border-white rounded-lg transition hover:bg-white hover:text-black font-arbMuslimah"
             onClick={() => handleLanguageSelection("ar")}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
@@ -47,7 +47,7 @@ export default function LandingPage() {
           </motion.button>
 
           <motion.button
-            className="px-6 py-3 text-lg font-semibold text-black bg-white-700 border border-white rounded-lg transition hover:bg-white hover:text-black"
+            className="px-6 py-3 text-lg font-semibold text-black bg-white-700 border border-white rounded-lg transition hover:bg-white hover:text-black font-arbMuslimah"
             onClick={() => handleLanguageSelection("en")}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}

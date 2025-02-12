@@ -16,12 +16,12 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <ul className={`${lateef.className} flex justify-center space-x-12 space-x-reverse py-4 text-empress-600 text-xl`}>
           <li>
-            <a href="#accommodation" className="hover:text-empress-800 transition-colors">
+            <a href="#accommodation" className="hover:text-empress-800 transition-colors font-arbMuslimah">
               {t('nav.accommodation')}
             </a>
           </li>
           <li>
-            <a href="#location" className="hover:text-empress-800 transition-colors">
+            <a href="#location" className="hover:text-empress-800 transition-colors font-arbMuslimah">
               {t('nav.salons')}
             </a>
           </li>
@@ -31,7 +31,7 @@ export default function Navbar() {
             </a>
           </li> */}
           <li>
-            <a href="#salons" className="hover:text-empress-800 transition-colors">
+            <a href="#salons" className="hover:text-empress-800 transition-colors font-arbMuslimah">
               {t('nav.salons')}
             </a>
           </li>

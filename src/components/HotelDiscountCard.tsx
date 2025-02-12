@@ -12,14 +12,14 @@ export default function HotelDiscountCard() {
       {/* When & Where Section */}
       <Card className="rounded-xl p-6 bg-white/10">
         <CardHeader>
-          <h2 className="text-3xl text-center text-empress-900 font-NymphaTrial">
+          <h2 className="text-3xl text-center text-empress-900  font-arbMuslimah">
             {t("accommodation.title")}
           </h2>
         </CardHeader>
         <CardContent className="text-center space-y-4">
-          <p className="text-xl">{t("accommodation.date")}</p>
-          <p className="text-xl">{t("accommodation.time")}</p>
-          <p className="text-xl">{t("accommodation.location")}</p>
+          <p className="text-xl font-arbMuslimah">{t("accommodation.date")}</p>
+          <p className="text-xl font-arbMuslimah">{t("accommodation.time")}</p>
+          <p className="text-xl font-arbMuslimah">{t("accommodation.location")}</p>
         </CardContent>
         <CardContent>
           <iframe
@@ -37,10 +37,10 @@ export default function HotelDiscountCard() {
       <Card className="p-6 bg-empress-10 rounded-xl shadow-lg">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
           <div className="flex-1 text-center lg:text-left">
-            <h2 className="text-3xl text-empress-900 font-ArbMuslimah">
+            <h2 className="text-3xl text-empress-900 font-arbMuslimah">
               {t("accommodation.specialDiscount")}
             </h2>
-            <p className="mt-2 text-lg text-empress-700">
+            <p className="mt-2 text-lg text-empress-700 font-arbMuslimah">
               {t("accommodation.discountDetails")}
             </p>
           </div>
@@ -51,7 +51,7 @@ export default function HotelDiscountCard() {
               target="_blank"
               rel="noopener noreferrer"
               variant="default"
-              className="px-6 py-3 text-lg font-semibold text-black bg-white-700 border border-white rounded-lg transition hover:bg-white hover:text-black"
+              className="px-6 py-3 text-lg font-semibold text-black bg-white-700 border border-white rounded-lg transition hover:bg-white hover:text-black font-arbMuslimah"
             >
               {t("accommodation.view")}
             </Button>

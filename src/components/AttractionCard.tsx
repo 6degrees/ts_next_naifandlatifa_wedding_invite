@@ -29,7 +29,7 @@ export default function AttractionCard() {
               <div className="absolute inset-0 bg-black/50" />
               {/* Content */}
               <CardHeader className="relative h-full flex items-center justify-center">
-                <h3 className="text-2xl text-white text-center">
+                <h3 className="text-2xl text-white text-center font-nympha">
                   {attraction.name}
                 </h3>
               </CardHeader>
