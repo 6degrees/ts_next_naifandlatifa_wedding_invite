@@ -7,7 +7,7 @@ export default {
     },
     nav: {
         home: "Home",
-        accommodation: "Event Details",
+        accommodation: "When & Where",
         location: "Travel & Accommodation",
         salons: "Beauty & Styling",
     },
@@ -18,9 +18,9 @@ export default {
     },
     invitation: {
         title: "Wedding Invitation",
-        hostsIntro: "We are honored to invite you",
-        and: "&",
-        eventIntro: "to the wedding ceremony of",
+        hostsIntro: "To our dearest guests, honored by your presence",
+        and: "",
+        eventIntro: "For your comfort and convenience, we have curated a selection of services to enhance your experience and make your journey more delightful",
         bintOf: "Bint {{name}}",
         binOf: "Bin {{name}}",
         on: "&",
@@ -43,8 +43,13 @@ export default {
         addToCalendar: "Add to Calendar",
     },
     accommodation: {
-        specialDiscount: "Special Discount",
-        discountDetails: "Exclusive discount on reservations at The Nile Ritz-Carlton, Cairo"
+        title: "When & Where",
+        date:"Date: 8th May 2025",
+        time:"Time: 8:00 PM",
+        location:"Location: Nile Ritz-Carlton, Cairo",
+        view:"View",
+        specialDiscount: "Exclusively for You",
+        discountDetails: "Exclusive discount for our wedding guests at the Nile Ritz-Carlton, Cairo. Enjoy a luxurious stay at a special rate and be right at the heart of the celebration."
     },
     location: {
         getDirections: "Get Directions"

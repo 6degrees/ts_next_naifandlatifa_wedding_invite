@@ -7,7 +7,7 @@ export default {
     },
     nav: {
         home: "الرئيسية",
-        accommodation: "تفاصيل الحفل",
+        accommodation: "متى وأين",
         location: "السفر والإقامة",
         salons: "صالونات التجميل والتصفيف",
     },
@@ -18,9 +18,9 @@ export default {
     },
     invitation: {
         title: "دعوة زفاف",
-        hostsIntro: "تتشرف",
+        hostsIntro: "إلى كل من يشرفنا حضوره ومشاركته فرحتنا",
         and: "و",
-        eventIntro: "بدعوتكم لحضور حفل زفاف",
+        eventIntro: "  حرصًا على راحتكم وخدمتكم، تجدون هنا مجموعة من الخدمات التي قد تسهم في جعل رحلتكم أكثر سهولة وتميزًا",
         bintOf : "بنت {{name}}",
         binOf : "بن {{name}}",
         on : "على",
@@ -43,8 +43,13 @@ export default {
         addToCalendar: "إضافة إلى التقويم",
     },
     accommodation: {
-        specialDiscount: "خصم خاص",
-        discountDetails: "خصم خاص على الحجوزات في فندق نايل ريتز كارلتون، القاهرة"
+        title: "متى وأين",
+        date: "التاريخ: 8 مايو 2025",
+        time: "الوقت: 8:00 مساءً",
+        location: "الموقع: فندق نايل ريتز كارلتون، القاهرة",
+        view: "عرض",
+        specialDiscount: " خصيصًا لكم",
+        discountDetails: "خصمًا خاصًا لضيوف حفل زفافنا في فندق نايل ريتز كارلتون، القاهرة. استمتعوا بإقامة فاخرة بأسعار مميزة لتكونوا بالقرب من أجواء الاحتفال "
     },
     location: {
         getDirections: "الحصول على الاتجاهات"

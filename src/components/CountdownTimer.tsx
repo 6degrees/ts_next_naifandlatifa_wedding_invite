@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { invitationData } from "@/data/invitation"
 import {useTranslation} from "react-i18next";
+import "../styles/fonts.css";
 
 type TimeLeft = {
   days: number

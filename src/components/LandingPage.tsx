@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Background from "@/components/Background";
 import {useAppContext} from "@/context/AppContext";
+import "../styles/fonts.css";
 
 export default function LandingPage() {
   const { selectedLanguage, setSelectedLanguage } = useAppContext();

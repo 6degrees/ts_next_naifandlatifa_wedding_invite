@@ -1,6 +1,7 @@
 import { Card, CardHeader } from "@/components/ui/card"
 import { salons } from "@/data/salons"
 import {useAppContext} from "@/context/AppContext";
+import "../styles/fonts.css";
 
 export default function SaloonCard() {
   const { selectedLanguage, } = useAppContext();

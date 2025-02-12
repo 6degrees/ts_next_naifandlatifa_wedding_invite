@@ -1,11 +1,12 @@
-import { Lateef } from "next/font/google"
+// import { Lateef } from "next/font/google"
 import {useTranslation} from "react-i18next";
+import "../styles/fonts.css";
 
-const lateef = Lateef({
-  subsets: ["arabic"],
-  weight: "400",
-  display: "swap",
-})
+// const lateef = Lateef({
+//   subsets: ["arabic"],
+//   weight: "400",
+//   display: "swap",
+// })
 
 export default function Navbar() {
   const { t} = useTranslation();

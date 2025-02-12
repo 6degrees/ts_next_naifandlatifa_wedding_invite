@@ -1,5 +1,6 @@
 import { Card, CardHeader } from "@/components/ui/card"
 import { attractions } from "@/data/attractions"
+import "../styles/fonts.css";
 
 export default function AttractionCard() {
   const getLocationUrl = (attraction: typeof attractions[0]) => {

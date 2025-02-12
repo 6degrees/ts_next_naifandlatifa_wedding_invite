@@ -1,4 +1,5 @@
 import { Card, CardHeader, CardContent } from "@/components/ui/card"
+import "../styles/fonts.css";
 
 export default function TipsSection() {
   return (
