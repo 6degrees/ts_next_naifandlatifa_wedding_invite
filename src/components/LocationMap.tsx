@@ -1,12 +1,16 @@
 "use client";
-
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { Car, Percent } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useAppContext } from "@/context/AppContext";
 
 export default function TravelWithUsSection() {
   const { t } = useTranslation();
+  const { selectedLanguage } = useAppContext();
+
+  // Determine font class based on language
+  const fontClass = selectedLanguage === "ar" ? "font-nympha" : "font-arbMuslimah";
 
   return (
     <div id="travel" className="space-y-12 mt-12">
@@ -15,18 +19,19 @@ export default function TravelWithUsSection() {
         className="relative bg-cover bg-center rounded-xl overflow-hidden shadow-lg"
         style={{ backgroundImage: "url('/cairo.jpg')" }}
       >
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
 
         <div className="relative p-12 text-center lg:text-left">
           <Card className="bg-transparent text-white">
             <div className="p-6 space-y-6">
-              <CardHeader>
-                <h2 className="text-4xl font-bold text-white font-arbMuslimah mb-4">
+              <CardHeader className={`flex items-center gap-2 ${fontClass}`}>
+                <Car className="w-6 h-6 text-white" />
+                <h2 className={`text-4xl font-bold text-white ${fontClass} mb-4`}>
                   {t("location.title")}
                 </h2>
               </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-lg font-arbMuslimah">{t("location.description")}</p>
+              <CardContent className={`space-y-3 ${fontClass}`}>
+                <p className={`text-lg ${fontClass}`}>{t("location.description")}</p>
                 <div className="mt-6 flex flex-col sm:flex-row items-center gap-4">
                   <Button
                     as="a"
@@ -54,19 +59,23 @@ export default function TravelWithUsSection() {
       </div>
 
       {/* Special Discount Section */}
-      <div className="relative bg-cover bg-center rounded-xl overflow-hidden shadow-lg" style={{ backgroundImage: "url('https://cache.marriott.com/content/dam/marriott-renditions/CAIRZ/cairz-exterior-0018-hor-wide.jpg')" }}>
-        <div className="absolute inset-0 bg-black/40"></div>
+      <div
+        className="relative bg-cover bg-center rounded-xl overflow-hidden shadow-lg"
+        style={{ backgroundImage: "url('/Ritz2.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/60"></div>
 
         <div className="relative p-12 text-center lg:text-left">
           <Card className="bg-transparent text-white">
             <div className="p-6 space-y-6">
-              <CardHeader>
-                <h2 className="text-4xl font-bold text-white font-arbMuslimah mb-4">
+              <CardHeader className={`flex items-center gap-2 ${fontClass}`}>
+                <Percent className="w-6 h-6 text-white" />
+                <h2 className={`text-4xl font-bold text-white ${fontClass} mb-4`}>
                   {t("accommodation.specialDiscount")}
                 </h2>
               </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-lg font-arbMuslimah">{t("accommodation.discountDetails")}</p>
+              <CardContent className={`space-y-3 ${fontClass}`}>
+                <p className={`text-lg ${fontClass}`}>{t("accommodation.discountDetails")}</p>
                 <div className="mt-6">
                   <Button
                     as="a"
@@ -87,6 +96,8 @@ export default function TravelWithUsSection() {
   );
 }
 
+
+ 
 
 
 // "use client";

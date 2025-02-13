@@ -7,7 +7,7 @@ export default {
     },
     nav: {
         home: "Home",
-        accommodation: "When & Where",
+        accommodation: "Event Details",
         location: "Travel & Accommodation",
         salons: "Beauty & Styling",
     },
@@ -18,9 +18,9 @@ export default {
     },
     invitation: {
         title: "Wedding Invitation",
-        hostsIntro: "To our dearest guests, honored by your presence",
+        hostsIntro: "To everyone we are delighted to share our joy with",
         and: "",
-        eventIntro: "For your comfort and convenience, we have curated a selection of services to enhance your experience and make your journey more delightful",
+        eventIntro: "For your convenience and comfort, here are some services you may benefit from during your journey.",
         bintOf: "Bint {{name}}",
         binOf: "Bin {{name}}",
         on: "&",

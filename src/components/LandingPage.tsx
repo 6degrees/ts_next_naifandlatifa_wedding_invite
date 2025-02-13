@@ -30,7 +30,7 @@ export default function LandingPage() {
         <motion.img
           src="/logo.png"
           alt="Wedding Logo"
-          className="w-36 h-auto mb-6"
+          className="w-80 h-auto mb-6"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
