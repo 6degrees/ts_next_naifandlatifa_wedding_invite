@@ -1,17 +1,52 @@
 "use client";
 
+import { useState, useEffect, useRef } from "react";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
+import * as maptilersdk from "@maptiler/sdk";
+import "@maptiler/sdk/dist/maptiler-sdk.css";
 
 export default function HotelDiscountCard() {
   const { t } = useTranslation();
+  const [isHovered, setIsHovered] = useState(false);
+  const mapContainer = useRef<HTMLDivElement>(null);
+  const map = useRef<maptilersdk.Map | null>(null);
+  const marker = useRef<maptilersdk.Marker | null>(null);
+
+  useEffect(() => {
+    if (map.current || !mapContainer.current) return;
+
+    maptilersdk.config.apiKey = "mVfew9iwlBZORvlHa7K5";
+
+    map.current = new maptilersdk.Map({
+      container: mapContainer.current,
+      style: `https://api.maptiler.com/maps/45657a96-f776-451e-8f13-69961393d28b/style.json?key=mVfew9iwlBZORvlHa7K5`,
+      center: [31.2320351, 30.0458889],
+      zoom: 15,
+    });
+
+    marker.current = new maptilersdk.Marker({ color: "#7D7175" })
+      .setLngLat([31.2320351, 30.0458889])
+      .addTo(map.current);
+
+    map.current.addControl(new maptilersdk.NavigationControl());
+    map.current.addControl(new maptilersdk.FullscreenControl());
+
+    return () => {
+      if (map.current) {
+        map.current.remove();
+        map.current = null;
+      }
+    };
+  }, []);
 
   return (
     <div id="accommodation" className="space-y-12">
       {/* When & Where Section */}
-      <Card className="rounded-xl p-6 bg-white/10">
+      <Card className="rounded-xl p-6 bg-white/10 relative overflow-hidden">
         <CardHeader>
-          <h2 className="text-4xl text-center text-empress-900 font-arbMuslimah font-bold ">
+          <h2 className="text-4xl text-center text-empress-900 font-arbMuslimah font-bold">
             {t("accommodation.title")}
           </h2>
         </CardHeader>
@@ -20,15 +55,36 @@ export default function HotelDiscountCard() {
           <p className="text-xl font-arbMuslimah">{t("accommodation.time")}</p>
           <p className="text-xl font-arbMuslimah">{t("accommodation.location")}</p>
         </CardContent>
-        <CardContent>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.092679405453!2d31.231620015463234!3d30.047709881884012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145841cb60418ab9%3A0xb6189e7e967d2e4f!2sThe%20Nile%20Ritz-Carlton%2C%20Cairo!5e0!3m2!1sen!2seg!4v1613129455227!5m2!1sen!2seg"
-            width="100%"
-            height="300"
-            allowFullScreen=""
-            loading="lazy"
-            className="rounded-lg"
+        <CardContent
+          className="relative"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <div ref={mapContainer} className="w-full h-96 rounded-lg" />
+          {/* Dark overlay on hover */}
+          <div
+            className={`absolute inset-0 bg-black transition-opacity duration-500 ${
+              isHovered ? "opacity-50" : "opacity-0"
+            }`}
           />
+          {/* Button appears on hover with hover effect */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <Button
+              asChild
+              size="lg"
+              className={`bg-white text-black font-semibold shadow-md transition duration-300 hover:bg-gray-100 hover:shadow-lg pointer-events-auto ${
+                isHovered ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <a
+                href="https://www.google.com/maps/place/The+Nile+Ritz-Carlton,+Cairo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("location.getDirections")}
+              </a>
+            </Button>
+          </div>
         </CardContent>
       </Card>
 
@@ -37,7 +93,7 @@ export default function HotelDiscountCard() {
         href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1738267348055&key=GRP&guestreslink2=true&app=resvlink"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex flex-col items-center  bg-white/10 border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 transition dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+        className="flex flex-col items-center bg-white/10 border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 transition dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
       >
         <img
           className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"

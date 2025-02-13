@@ -52,7 +52,11 @@ export default {
         discountDetails: "Exclusive discount for our wedding guests at the Nile Ritz-Carlton, Cairo. Enjoy a luxurious stay at a special rate and be right at the heart of the celebration."
     },
     location: {
-        getDirections: "Get Directions"
+        getDirections: "Get Directions",
+        title:"Travel to Egypt with Abdo Al Swify",
+        description:"Explore Egypt with personalized services from Abdo Al Swify, including tour guidance, hotel & apartment reservations, and car rental to make your trip unforgettable.",
+        whatsapp:"   Book Now on WhatsApp",
+        snapchat:" Follow on Snapchat"
     },
     footer: {
         preparedWith: "Prepared with",
