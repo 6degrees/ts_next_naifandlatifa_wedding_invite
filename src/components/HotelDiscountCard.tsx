@@ -1,7 +1,6 @@
 "use client";
 
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 
 export default function HotelDiscountCard() {
@@ -12,7 +11,7 @@ export default function HotelDiscountCard() {
       {/* When & Where Section */}
       <Card className="rounded-xl p-6 bg-white/10">
         <CardHeader>
-          <h2 className="text-3xl text-center text-empress-900  font-arbMuslimah">
+          <h2 className="text-4xl text-center text-empress-900 font-arbMuslimah font-bold ">
             {t("accommodation.title")}
           </h2>
         </CardHeader>
@@ -34,30 +33,26 @@ export default function HotelDiscountCard() {
       </Card>
 
       {/* Special Discount Section */}
-      <Card className="p-6 bg-empress-10 rounded-xl shadow-lg">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-          <div className="flex-1 text-center lg:text-left">
-            <h2 className="text-3xl text-empress-900 font-arbMuslimah">
-              {t("accommodation.specialDiscount")}
-            </h2>
-            <p className="mt-2 text-lg text-empress-700 font-arbMuslimah">
-              {t("accommodation.discountDetails")}
-            </p>
-          </div>
-          <div className="mt-4 lg:mt-0">
-            <Button
-              as="a"
-              href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1738267348055&key=GRP&guestreslink2=true&app=resvlink"
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="default"
-              className="px-6 py-3 text-lg font-semibold text-black bg-white-700 border border-white rounded-lg transition hover:bg-white hover:text-black font-arbMuslimah"
-            >
-              {t("accommodation.view")}
-            </Button>
-          </div>
+      <a
+        href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1738267348055&key=GRP&guestreslink2=true&app=resvlink"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex flex-col items-center  bg-white/10 border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 transition dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+      >
+        <img
+          className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+          src="https://cache.marriott.com/content/dam/marriott-renditions/CAIRZ/cairz-exterior-0018-hor-wide.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1336px:*"
+          alt="Hotel Image"
+        />
+        <div className="flex flex-col justify-between p-4 leading-normal">
+          <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white font-arbMuslimah">
+            {t("accommodation.specialDiscount")}
+          </h2>
+          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 font-arbMuslimah">
+            {t("accommodation.discountDetails")}
+          </p>
         </div>
-      </Card>
+      </a>
     </div>
   );
 }

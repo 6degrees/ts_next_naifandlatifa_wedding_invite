@@ -14,53 +14,121 @@ type Salon = {
 export const salons: Salon[] = [
   {
     name: {
-      en: "Toi",
+      en: "Ashour",
       ar: "توي"
     },
-    image: "https://lh5.googleusercontent.com/p/AF1QipNkeXLbu48hCJeN5cpi-iYwHJTu5fbRhahdYDwT=s1536",
+    description: {
+      en: "Hair Stylost",
+      ar: "توي"
+    },
+    image: "/salon1.png",
     location: {
       lat: 30.0706465,
       lng: 31.2201156,
       name: "Toi"
     },
-    link: "https://maps.app.goo.gl/Z95tDWYy3Kp1Rx678"
+    link: "https://www.instagram.com/p/CaAQ7rWqODX/?igsh=MWNteHM3aW50dzc5dg%3D%3D"
   },
   {
     name: {
-      en: "Zoya",
+      en: "Al Sagheer ",
       ar: "زويا"
     },
-    image: "https://lh5.googleusercontent.com/p/AF1QipOvba8kIU7Ggh8Msv5WD34ocV50PVKzCmsH2crw=s1536",
+    description: {
+      en: "Beauty Salons",
+      ar: "توي"
+    },
+    image: "/salon2.png",
     location: {
       lat: 30.0284096,
       lng: 31.4804642,
       name: "ZOEYA Beauty Lounge "
     },
-    link: "https://maps.app.goo.gl/TMyFfyJYvFMzbiB99"
+    link: "https://www.instagram.com/alsagheersalons?igsh=MW5xY3V5amZjOGN5cg%3D%3D"
   },
   {
     name: {
-      en: "Beauty Bar",
+      en: "Nehal Khalil",
       ar: "بيوتي بار"
     },
-    image: "https://lh5.googleusercontent.com/p/AF1QipOGDER3SFCUGgum-9XSP67AmZveFjw2RwRY2iu5=s406-k-no",
+    description: {
+      en: " Artist",
+      ar: "توي"
+    },
+    image: "/salon3.png",
     location: {
       lat: 30.0434,
       lng: 31.2367,
       name: "Beauty Bar Salon Cairo"
     },
-    link: "https://maps.app.goo.gl/t89EyXUmi3SBDSAc8"
+    link: "https://www.instagram.com/nehal_khalil_makeup_artist/"
   },
   {
     name: {
-      en: "Stars Beauty Lounge",
+      en: "Zeina El Naggar",
       ar: "صالون النجوم"
     },
-    image: "https://www.insideedition.com/sites/default/files/images/2020-05/salon.jpg",
+    description: {
+      en: "Makeup Artist",
+      ar: "توي"
+    },
+    image: "/salon4.png",
     location: {
       lat: 30.0424,
       lng: 31.2377,
       name: "Stars Beauty Lounge"
-    }
+    },
+    link: "https://www.instagram.com/zeinaelnaggar/"
+  },
+  {
+    name: {
+      en: "Mona Gamal",
+      ar: "صالون النجوم"
+    },
+    description: {
+      en: "Artist",
+      ar: "توي"
+    },
+    image: "/salon5.png",
+    location: {
+      lat: 30.0424,
+      lng: 31.2377,
+      name: "Stars Beauty Lounge"
+    },
+    link: "https://www.instagram.com/monagamalofficial/"
+  },
+  {
+    name: {
+      en: "Mai Elbahey",
+      ar: "صالون النجوم"
+    },
+    description: {
+      en: "Makeup Artist",
+      ar: "توي"
+    },
+    image: "/salon6.png",
+    location: {
+      lat: 30.0424,
+      lng: 31.2377,
+      name: "Stars Beauty Lounge"
+    },
+    link: "https://www.instagram.com/mai_elbahey/"
+  },
+  {
+    name: {
+      en: "Nesma Mansour",
+      ar: "صالون النجوم"
+    },
+    description: {
+      en: "Makeup Artist",
+      ar: "توي"
+    },
+    image: "/salon7.png",
+    location: {
+      lat: 30.0424,
+      lng: 31.2377,
+      name: "Stars Beauty Lounge"
+    },
+    link: "https://www.instagram.com/nesmamansourmakeup/"
   }
 ] 
