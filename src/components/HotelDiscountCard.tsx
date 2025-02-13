@@ -89,7 +89,7 @@ export default function HotelDiscountCard() {
       </Card>
 
       {/* Special Discount Section */}
-      <a
+      {/* <a
         href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1738267348055&key=GRP&guestreslink2=true&app=resvlink"
         target="_blank"
         rel="noopener noreferrer"
@@ -108,7 +108,7 @@ export default function HotelDiscountCard() {
             {t("accommodation.discountDetails")}
           </p>
         </div>
-      </a>
+      </a> */}
     </div>
   );
 }
