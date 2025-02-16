@@ -1,7 +1,7 @@
 FROM node:20
 # create destination directory
-RUN mkdir -p /usr/src/nuxt-app
-WORKDIR /usr/src/nuxt-app
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
 # copy the app, note .dockerignore
 COPY . .
