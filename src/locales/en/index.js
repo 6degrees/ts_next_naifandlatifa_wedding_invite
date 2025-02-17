@@ -18,9 +18,9 @@ export default {
     },
     invitation: {
         title: "Wedding Invitation",
-        hostsIntro: "To everyone we are delighted to share our joy with",
+        hostsIntro: "To everyone with whom we are delighted to share our joy",
         and: "",
-        eventIntro: "For your convenience and comfort, here are some services you may benefit from during your journey.",
+        eventIntro: "We have curated some services for your comfort and enjoyment during your trip.",
         bintOf: "Bint {{name}}",
         binOf: "Bin {{name}}",
         on: "&",
@@ -53,8 +53,8 @@ export default {
     },
     location: {
         getDirections: "Get Directions",
-        title:"Travel to Egypt with Abdo Al Swify",
-        description:"Explore Egypt with personalized services from Abdo Al Swify, including tour guidance, hotel & apartment reservations, and car rental to make your trip unforgettable.",
+        title:"Exclusive Transportation Services in Egypt",
+        description:"Explore Egypt with personalized services, including tour guidance, hotel & apartment reservations, and car rental to make your trip unforgettable.",
         whatsapp:"   Book Now on WhatsApp",
         snapchat:" Follow on Snapchat"
     },

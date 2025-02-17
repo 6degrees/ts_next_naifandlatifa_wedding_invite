@@ -11,8 +11,9 @@ import "../styles/fonts.css";
 
 export default function InvitationCard() {
   const { t } = useTranslation();
-  const { selectedLanguage } = useAppContext();
+  const { selectedLanguage }: { selectedLanguage: "en" | "ar" } = useAppContext();
   const { hosts, bride, groom, event } = invitationData;
+  
 
   const handleAddToCalendar = () => {
     const startTime = new Date(event.date.timestamp);
@@ -54,7 +55,7 @@ export default function InvitationCard() {
         />
         <p className={`font-medium ${fontClass}`}>{t("invitation.hostsIntro")}</p>
         <p className={`${fontClass}`}>{t("invitation.eventIntro")}</p>
-        <p className={`mt-6 ${fontClass}`}>{t("invitation.gratitude")}</p>
+        {/* <p className={`mt-6 ${fontClass}`}>{t("invitation.gratitude")}</p> */}
         <div className="flex justify-center">
           <Button
             onClick={handleAddToCalendar}
