@@ -25,21 +25,20 @@ export default function Home() {
           <div className="relative z-10 p-4">
             <div className="container mx-auto">
               <Tabs defaultValue="home" className="w-full">
-                <TabsList dir="rtl" className="w-full justify-center">
-                  <TabsTrigger className="text-base lg:text-xl px-4 py-2 lg:px-8 lg:py-3" value="home">
+                <TabsList dir="rtl" className="w-full p-2 grid grid-cols-2 sm:grid-cols-3 md:flex gap-2 md:gap-4 h-auto">
+                  <TabsTrigger className="text-sm sm:text-base md:text-lg lg:text-xl px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 lg:px-8 lg:py-3 min-w-[100px] text-center" value="home">
                     {t('nav.home')}
                   </TabsTrigger>
-                  <TabsTrigger className="text-base lg:text-xl px-4 py-2 lg:px-8 lg:py-3" value="accommodation">
+                  <TabsTrigger className="text-sm sm:text-base md:text-lg lg:text-xl px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 lg:px-8 lg:py-3 min-w-[100px] text-center" value="accommodation">
                     {t('nav.accommodation')}
                   </TabsTrigger>
-                  <TabsTrigger className="text-base lg:text-xl px-4 py-2 lg:px-8 lg:py-3" value="location">
+                  <TabsTrigger className="text-sm sm:text-base md:text-lg lg:text-xl px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 lg:px-8 lg:py-3 min-w-[100px] text-center" value="location">
                     {t('nav.location')}
                   </TabsTrigger>
-                  <TabsTrigger className="text-base lg:text-xl px-4 py-2 lg:px-8 lg:py-3" value="salons">
+                  <TabsTrigger className="text-sm sm:text-base md:text-lg lg:text-xl px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 lg:px-8 lg:py-3 min-w-[100px] text-center" value="salons">
                     {t('nav.salons')}
                   </TabsTrigger>
                 </TabsList>
-
                 <AnimatePresence mode="wait">
                   <div className="mt-8">
                     <TabsContent value="home" className="space-y-8 lg:space-y-12">
