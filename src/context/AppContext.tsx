@@ -8,7 +8,7 @@ export function AppProvider({children}: { children: React.ReactNode }) {
   const [selectedLanguage, setSelectedLanguage] = useState(null);
 
   useEffect(() => {
-    i18next.changeLanguage(selectedLanguage);
+    selectedLanguage? i18next.changeLanguage(selectedLanguage): null;
   }, [selectedLanguage]);
 
   return (
