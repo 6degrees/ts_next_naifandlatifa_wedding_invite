@@ -35,8 +35,8 @@ export default function TravelWithUsSection() {
               <div className="mt-4 flex flex-col sm:flex-row items-center gap-4">
                 {/* ✅ Fix: Explicitly set text-black in buttons */}
                 <Button asChild className="bg-white text-black font-semibold rounded-lg px-6 py-2 sm:px-8 sm:py-3 transition hover:bg-gray-200 w-full sm:w-auto">
-                  <a href="https://wa.me/00201119774784" target="_blank" rel="noopener noreferrer">
-                    {t("location.whatsapp")}
+                <a href="https://wa.me/201119774784" target="_blank" rel="noopener noreferrer">
+                {t("location.whatsapp")}
                   </a>
                 </Button>
 
