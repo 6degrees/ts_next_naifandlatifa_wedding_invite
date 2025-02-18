@@ -13,6 +13,7 @@ export default function HotelDiscountCard() {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<maptilersdk.Map | null>(null);
   const marker = useRef<maptilersdk.Marker | null>(null);
+  
 
   useEffect(() => {
     if (map.current || !mapContainer.current) return;

@@ -10,6 +10,8 @@ import "../styles/fonts.css";
 
 export default function Navbar() {
   const { t} = useTranslation();
+  
+  
 
   return (
     <nav className="top-0 z-50">

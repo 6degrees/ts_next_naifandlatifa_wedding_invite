@@ -28,9 +28,9 @@ export default function LandingPage() {
    
       <div className="relative z-10 flex flex-col items-center">
         <motion.img
-          src="/logo.png"
+          src="/names.png"
           alt="Wedding Logo"
-          className="w-80 h-auto mb-6"
+          className="w-80 h-auto mb-6 "
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
