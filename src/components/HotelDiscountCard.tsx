@@ -6,15 +6,20 @@ import { Button } from "@/components/ui/button";
 import * as maptilersdk from "@maptiler/sdk";
 import "@maptiler/sdk/dist/maptiler-sdk.css";
 import { useTranslation } from "react-i18next";
+import { useAppContext } from "@/context/AppContext";
 
 export default function HotelDiscountCard() {
   const { t } = useTranslation();
+  const { selectedLanguage } = useAppContext();
+
+  // Dynamically set font class based on language
+  const fontClass = selectedLanguage === "ar" ? "font-nymphaTrial" : "font-arbMuslimah";
+
   const [isHovered, setIsHovered] = useState(false);
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<maptilersdk.Map | null>(null);
   const marker = useRef<maptilersdk.Marker | null>(null);
   
-
   useEffect(() => {
     if (map.current || !mapContainer.current) return;
 
@@ -47,14 +52,14 @@ export default function HotelDiscountCard() {
       {/* When & Where Section */}
       <Card className="rounded-xl p-6 bg-white/10">
         <CardHeader>
-          <h2 className="text-4xl text-center text-empress-900 font-arbMuslimah font-bold">
+          <h2 className={`text-4xl text-center text-empress font-bold ${fontClass}`}>
             {t("accommodation.title")}
           </h2>
         </CardHeader>
-        <CardContent className="text-center space-y-4">
-          <p className="text-xl font-arbMuslimah">{t("accommodation.date")}</p>
-          <p className="text-xl font-arbMuslimah">{t("accommodation.time")}</p>
-          <p className="text-xl font-arbMuslimah">{t("accommodation.location")}</p>
+        <CardContent className={`text-center space-y-4 text-empress ${fontClass}`}>
+          <p className="text-xl">{t("accommodation.date")}</p>
+          <p className="text-xl">{t("accommodation.time")}</p>
+          <p className="text-xl">{t("accommodation.location")}</p>
         </CardContent>
         <CardContent className="relative overflow-hidden rounded-xl">
           <div

@@ -12,7 +12,7 @@ export default function Background() {
         <source src="/10536481-hd_2048_1080_25fps.mp4" type="video/mp4" />
       </video>
       <div 
-        className="absolute inset-0 bg-[#F5F5DC]/30 backdrop-blur-sm"  // ✅ Beige color
+        className="absolute inset-0 bg-[#F5F5DC]/30 backdrop-blur-sm"  
         style={{ pointerEvents: 'none' }}
       />
     </div>
