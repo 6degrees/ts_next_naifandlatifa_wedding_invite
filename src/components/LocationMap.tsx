@@ -18,13 +18,13 @@ export default function TravelWithUsSection() {
       
       {/* Travel with Us Section */}
       <div
-        className="relative bg-cover bg-center rounded-xl overflow-hidden shadow-lg w-full lg:w-1/2 h-[400px] sm:h-[450px]"
+        className="relative bg-cover bg-center rounded-xl overflow-hidden shadow-lg w-full lg:w-1/2 h-[500px] sm:h-[600px] lg:h-[650px]"
         style={{ backgroundImage: "url('/cairo.jpg')" }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
 
         <div className="relative flex flex-col justify-center items-center p-6 sm:p-12 text-center text-white w-full h-full">
-          <Card className="bg-transparent text-white w-full">
+          <Card className="bg-transparent text-white w-full h-full flex flex-col justify-center">
             <CardHeader className={`flex items-center gap-2 justify-center ${fontClass}`}>
               <Car className="w-6 h-6 text-white" />
               <h2 className={`text-2xl sm:text-3xl font-bold text-white ${fontClass}`}>
@@ -35,7 +35,7 @@ export default function TravelWithUsSection() {
               <p className="text-lg sm:text-xl">{t("location.description")}</p>
               <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button asChild className="bg-white text-black font-semibold rounded-lg px-6 py-2 sm:px-8 sm:py-3 transition hover:bg-gray-200 w-full sm:w-auto">
-                  <a href="https://wa.me/00201119774784" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/201119774784" target="_blank" rel="noopener noreferrer">
                     {t("location.whatsapp")}
                   </a>
                 </Button>
@@ -52,13 +52,13 @@ export default function TravelWithUsSection() {
 
       {/* Special Discount Section */}
       <div
-        className="relative bg-cover bg-center rounded-xl overflow-hidden shadow-lg w-full lg:w-1/2 h-[400px] sm:h-[450px]"
+        className="relative bg-cover bg-center rounded-xl overflow-hidden shadow-lg w-full lg:w-1/2 h-[500px] sm:h-[600px] lg:h-[650px]"
         style={{ backgroundImage: "url('/Ritz2.jpg')" }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
 
         <div className="relative flex flex-col justify-center items-center p-6 sm:p-12 text-center text-white w-full h-full">
-          <Card className="bg-transparent text-white w-full">
+          <Card className="bg-transparent text-white w-full h-full flex flex-col justify-center">
             <CardHeader className={`flex items-center gap-2 justify-center ${fontClass}`}>
               <Percent className="w-6 h-6 text-white" />
               <h2 className={`text-2xl sm:text-3xl font-bold text-white ${fontClass}`}>
