@@ -28,9 +28,9 @@ export default function LandingPage() {
    
       <div className="relative z-10 flex flex-col items-center">
         <motion.img
-          src="/logo.png"
+          src="/names.png"
           alt="Wedding Logo"
-          className="w-80 h-auto mb-6"
+          className="w-80 h-auto mb-6 "
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -38,7 +38,7 @@ export default function LandingPage() {
 
         <div className="flex gap-6">
           <motion.button
-            className="px-6 py-3 text-lg font-semibold text-black bg-white-700 border border-white rounded-lg transition hover:bg-white hover:text-black font-arbMuslimah"
+            className="px-6 py-3 text-lg font-light text-empress bg-white-700 border border-white rounded-lg transition hover:bg-white hover:text-black font-nymphaTrial"
             onClick={() => handleLanguageSelection("ar")}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
@@ -47,7 +47,7 @@ export default function LandingPage() {
           </motion.button>
 
           <motion.button
-            className="px-6 py-3 text-lg font-semibold text-black bg-white-700 border border-white rounded-lg transition hover:bg-white hover:text-black font-arbMuslimah"
+            className="px-6 py-3 text-lg font-semibold text-empress bg-white-700 border border-white rounded-lg transition hover:bg-white hover:text-black font-arbMuslimah"
             onClick={() => handleLanguageSelection("en")}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
