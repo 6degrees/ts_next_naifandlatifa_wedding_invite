@@ -1,31 +1,67 @@
 export const invitationData = {
   hosts: {
-    first: "حصة عبدالله العليان",
-    second: "بدرية سعد الغريري"
+    first: {
+      en: "Hessa Abdullah Al-Olayan",
+      ar: "حصة عبدالله العليان"
+    },
+    second: {
+      en: "Badriya Saad Al-Ghurairi",
+      ar: "بدرية سعد الغريري"
+    },
   },
   bride: {
-    name: "لطيفه",
-    fatherName: "خالد الشملان"
+    name: {
+      en: "Latifa",
+      ar: "لطيفه",
+    },
+    fatherName: {
+      en: "Khalid Al-Shamlan",
+      ar: "خالد الشملان",
+    },
   },
   groom: {
-    name: "نايف",
-    fatherName: "عبدالرحمن الغريري"
+    name: {
+      en: "Naif",
+      ar: "نايف",
+    },
+    fatherName: {
+      en: "Abdulrahman Al-Ghurairi",
+      ar: "عبدالرحمن الغريري",
+    },
   },
   event: {
     date: {
-      day: "الخميس",
-      fullDate: "8 مايو 2025",
-      timestamp: "2025-05-08T20:00:00+03:00"
+      day: {
+        en: "Thursday",
+        ar: "الخميس",
+      },
+      fullDate: {
+        en: "May 8, 2025",
+        ar: "8 مايو 2025",
+      },
+      timestamp: "2025-05-08T20:00:00+03:00",
     },
-    time: "الثامنة",
+    time: {
+      en: "8:00 PM",
+      ar: "الثامنة مساءً",
+    },
     venue: {
-      name: "فندق الريتز كارلتون",
-      city: "القاهرة",
-      country: "مصر"
-    }
+      name: {
+        en: "Ritz-Carlton Hotel",
+        ar: "فندق الريتز كارلتون",
+      },
+      city: {
+        en: "Cairo",
+        ar: "القاهرة",
+      },
+      country: {
+        en: "Egypt",
+        ar: "مصر",
+      },
+    },
   },
   location: {
     lat: 30.0444,
-    lng: 31.2357
-  }
-} 
+    lng: 31.2357,
+  },
+};

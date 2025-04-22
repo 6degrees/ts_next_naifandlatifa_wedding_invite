@@ -1,45 +1,79 @@
-import { Card, CardHeader } from "@/components/ui/card"
-import { salons } from "@/data/salons"
+import { salons } from "@/data/salons";
+import { useAppContext } from "@/context/AppContext";
+import "../styles/fonts.css";
+
+type Salon = {
+  name: {
+    en: string;
+    ar: string;
+  };
+  description: {
+    en: string;
+    ar: string;
+  };
+  image: string;
+  location: {
+    lat: number;
+    lng: number;
+  };
+  link?: string;
+};
 
 export default function SaloonCard() {
-  const getLocationUrl = (salon: typeof salons[0]) => {
-    if (salon.link) return salon.link
-    return `https://www.google.com/maps/search/?api=1&query=${salon.location.lat},${salon.location.lng}`
-  }
+  const { selectedLanguage } = useAppContext();
+
+  const getLocationUrl = (salon: Salon) => {
+    if (salon.link) return salon.link;
+    return `https://www.google.com/maps/search/?api=1&query=${salon.location.lat},${salon.location.lng}`;
+  };
 
   return (
-    <div id="salons" className="space-y-6 mt-8 pt-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {salons.map((salon) => (
+    <div id="salons" className="space-y-8 mt-8 pt-8">
+      {/* Page Title and Description */}
+      <div className="text-center space-y-4">
+        <h2 className="text-4xl font-bold text-empress font-arbMuslimah">
+          {selectedLanguage === "ar"
+            ? "استكشف أفضل صالونات التجميل والمصففين المحليين"
+            : "Discover Top Local Makeup Artists & Hair Stylists"}
+        </h2>
+        <p className="text-lg   max-w-3xl mx-auto text-empress">
+          {selectedLanguage === "ar"
+            ? "جعلنا من السهل عليك اكتشاف مصففي الشعر وخبراء المكياج المحليين، مع أفضل التقييمات لتجربة لا تُنسى."
+            : "We've made it easy for you to explore top-rated local hair stylists and makeup artists for an unforgettable experience."}
+        </p>
+      </div>
+
+      {/* Salon Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {salons.map((salon: Salon) => (
           <a
-            key={salon.name}
+            key={salon.name.en}
             href={getLocationUrl(salon)}
             target="_blank"
             rel="noopener noreferrer"
-            className="block transition-transform duration-300 ease-in-out hover:scale-105"
+            className="relative block overflow-hidden rounded-lg shadow-lg transition hover:scale-105 h-96"
           >
-            <Card className="relative h-48 overflow-hidden rounded-xl">
-              {/* Background Image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-in-out"
-                style={{ 
-                  backgroundImage: `url(${salon.image})`,
-                  backgroundPosition: 'center'
-                }}
-              />
-              {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-black/50" />
-              {/* Content */}
-              <CardHeader className="relative h-full flex items-center justify-center">
-                <h3 className="text-2xl text-white text-center">
-                  {salon.name}
-                </h3>
-              </CardHeader>
-            </Card>
+            {/* Full-Width Background Image */}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: `url(${salon.image})`,
+              }}
+            />
+            {/* Dark Overlay */}
+            <div className="absolute inset-0 bg-black/30" />
+            {/* Text Content */}
+            <div className="relative z-10 p-6 flex flex-col justify-end h-full">
+              <h3 className="text-2xl font-bold tracking-tight text-white font-arbMuslimah">
+                {salon.name[selectedLanguage as "en" | "ar"]}
+              </h3>
+              <p className="mt-2 text-sm text-gray-200">
+                {salon.description[selectedLanguage as "en" | "ar"]}
+              </p>
+            </div>
           </a>
         ))}
       </div>
     </div>
-  )
+  );
 }
-  

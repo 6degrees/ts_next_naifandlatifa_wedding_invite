@@ -1,71 +1,64 @@
-import "./globals.css"
-import { Rubik } from "next/font/google"
-import type React from "react"
-import { Metadata } from "next"
-import { Viewport } from 'next'
-
-const rubik = Rubik({
-  subsets: ["arabic"],
-  weight: "400",
-  display: "swap",
-})
+import "./globals.css";
+import "../styles/fonts.css";
+import type React from "react";
+import {Metadata} from "next";
+import i18n from "i18next";
+import {AppProvider} from "@/context/AppContext";
+import I18nProvider from "@/components/I18nProvider";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://naifandlatifa.com'),
-  title: "نايف ولطيفة | دعوة زفاف",
-  description: "يتشرفان بدعوتكم لحضور حفل زفافهما يوم الخميس ٨ مايو ٢٠٢٥ في فندق نايل ريتز كارلتون، القاهرة",
+  metadataBase: new URL("https://naifandlatifa.com"),
+  title: "Naif & Latifa’s Wedding",
+  description: "Enjoy a thoughtfully curated experience for your comfort and joy during this special occasion",
   openGraph: {
-    type: 'website',
-    url: 'https://naifandlatifa.com',
-    title: 'نايف ولطيفة | دعوة زفاف',
-    description: 'يتشرفان بدعوتكم لحضور حفل زفافهما يوم الخميس ٨ مايو ٢٠٢٥ في فندق نايل ريتز كارلتون، القاهرة',
+    type: "website",
+    url: "https://naifandlatifa.com",
+    title: " Naif & Latifa’s Wedding",
+    description: "Enjoy a thoughtfully curated experience for your comfort and joy during this special occasion",
     images: [
       {
-        url: '/Logo.png',
+        url: "/Logo.png",
         width: 1200,
         height: 630,
-        alt: 'نايف ولطيفة',
-      }
+        alt: "Naif & Latifa",
+      },
     ],
-    siteName: 'نايف ولطيفة'
+    siteName: "Naif & Latifa",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'نايف ولطيفة | دعوة زفاف',
-    description: 'يتشرفان بدعوتكم لحضور حفل زفافهما يوم الخميس ٨ مايو ٢٠٢٥ في فندق نايل ريتز كارلتون، القاهرة',
-    images: ['/Logo.png'],
-    creator: '@6degrees',
-    site: '@6degrees',
+    card: "summary_large_image",
+    title: "Naif & Latifa’s Wedding",
+    description: "Enjoy a thoughtfully curated experience for your comfort and joy during this special occasion",
+    images: ["/Logo.png"],
+    creator: "@6degrees",
+    site: "@6degrees",
   },
-  applicationName: 'نايف ولطيفة',
-  keywords: ['دعوة زفاف', 'نايف', 'لطيفة', 'زفاف', 'حفل زفاف', 'فندق نايل ريتز كارلتون', 'القاهرة'],
-  authors: [{ name: '6degrees', url: 'https://6degrees.com.sa' }],
-  creator: '6degrees',
-  publisher: '6degrees',
+  applicationName: "Naif & Latifa",
+  keywords: ["دعوة زفاف", "نايف", "لطيفة", "زفاف", "حفل زفاف", "فندق نايل ريتز كارلتون", "القاهرة"],
+  authors: [{name: "6degrees", url: "https://6degrees.com.sa"}],
+  creator: "6degrees",
+  publisher: "6degrees",
   formatDetection: {
     telephone: false,
     date: false,
     address: false,
     email: false,
   },
-  manifest: '/manifest.json',
-}
+  manifest: "/manifest.json",
+};
 
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
-  themeColor: '#7D7175',
-}
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({children}: { children: React.ReactNode }) {
   return (
-    <html lang="ar" dir="rtl">
-      <head>
-        <meta name="apple-mobile-web-app-title" content="Naif&Latifa" />
-      </head>
-      <body className={rubik.className}>{children}</body>
-    </html>
-  )
+      <AppProvider>
+        <html lang={i18n.language || "ar"} dir={i18n.language === "en" ? "ltr" : "rtl"}>
+        <head>
+          <title></title>
+          <meta name="apple-mobile-web-app-title" content="Naif&Latifa"/>
+        </head>
+        <body>
+        <I18nProvider>{children}</I18nProvider>
+        </body>
+        </html>
+      </AppProvider>
+  );
 }
-

@@ -1,85 +1,86 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { invitationData } from "@/data/invitation";
-import * as maptilersdk from '@maptiler/sdk';
-import '@maptiler/sdk/dist/maptiler-sdk.css';
+import { Car, Percent } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { useAppContext } from "@/context/AppContext";
 
-export default function LocationMap() {
-    const [isHovered, setIsHovered] = useState(false);
-    const { location } = invitationData;
-    const mapContainer = useRef<HTMLDivElement>(null);
-    const map = useRef<maptilersdk.Map | null>(null);
-    const marker = useRef<maptilersdk.Marker | null>(null);
+export default function TravelWithUsSection() {
+  const { t } = useTranslation();
+  const { selectedLanguage } = useAppContext();
 
-    useEffect(() => {
-        if (map.current || !mapContainer.current) return;
+  // Determine font class based on language
+  const fontClass = selectedLanguage === "ar" ? "font-nympha" : "font-arbMuslimah";
 
-        maptilersdk.config.apiKey = 'mVfew9iwlBZORvlHa7K5';
-        
-        map.current = new maptilersdk.Map({
-            container: mapContainer.current,
-            style: `https://api.maptiler.com/maps/45657a96-f776-451e-8f13-69961393d28b/style.json?key=mVfew9iwlBZORvlHa7K5`,
-            center: [location.lng, location.lat],
-            zoom: 15,
-        });
+  return (
+    <div id="travel" className="flex flex-col lg:flex-row items-center justify-center gap-8 mt-8">
+      
+      {/* Travel with Us Section */}
+      <div
+        className="relative bg-cover bg-center rounded-xl overflow-hidden shadow-lg w-full lg:w-1/2 h-[500px] sm:h-[600px] lg:h-[650px]"
+        style={{ backgroundImage: "url('/cairo.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/60"></div>
 
-        // Add marker
-        marker.current = new maptilersdk.Marker({color: "#7D7175"})
-            .setLngLat([location.lng, location.lat])
-            .addTo(map.current);
-
-        // Add navigation control
-        map.current.addControl(new maptilersdk.NavigationControl());
-
-        // Add fullscreen control
-        map.current.addControl(new maptilersdk.FullscreenControl());
-
-        return () => {
-            if (map.current) {
-                map.current.remove();
-                map.current = null;
-            }
-        };
-    }, [location.lng, location.lat]);
-
-    return (
-        <div id="location">
-            <Card 
-                className="relative overflow-hidden rounded-xl mb-8" 
-                onMouseEnter={() => setIsHovered(true)} 
-                onMouseLeave={() => setIsHovered(false)}
-            >
-                <CardContent className="p-0">
-                    <div ref={mapContainer} className="w-full h-[600px]" />
-                    {/* Dark overlay */}
-                    <div 
-                        className={`absolute inset-0 bg-black transition-opacity duration-500 ${
-                            isHovered ? "opacity-80" : "opacity-10 pointer-events-none"
-                        }`}
-                    />
-                    {/* Button container */}
-                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <Button 
-                            asChild 
-                            variant="secondary" 
-                            size="lg" 
-                            className={`shadow-lg rounded-xl transition-opacity duration-500 pointer-events-auto ${
-                                isHovered ? 'opacity-100' : 'opacity-0'
-                            }`}
-                        >
-                            <a 
-                                href={`https://www.google.com/maps/dir/?api=1&destination=${location.lat},${location.lng}`} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                            >
-                                الحصول على الاتجاهات
-                            </a>
-                        </Button>
-                    </div>
-                </CardContent>
-            </Card>
+        <div className="relative flex flex-col justify-center items-center p-6 sm:p-12 text-center text-white w-full h-full">
+          <Card className="bg-transparent text-white w-full h-full flex flex-col justify-center">
+            <CardHeader className={`flex items-center gap-2 justify-center ${fontClass}`}>
+              <Car className="w-6 h-6 text-white" />
+              <h2 className={`text-2xl sm:text-3xl font-bold text-white ${fontClass}`}>
+                {t("location.title")}
+              </h2>
+            </CardHeader>
+            <CardContent className={`space-y-3 text-center ${fontClass}`}>
+              <p className="text-lg sm:text-xl">{t("location.description")}</p>
+              <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button asChild className="bg-white text-black font-semibold rounded-lg px-6 py-2 sm:px-8 sm:py-3 transition hover:bg-gray-200 w-full sm:w-auto">
+                  <a href="https://wa.me/201119774784" target="_blank" rel="noopener noreferrer">
+                    {t("location.whatsapp")}
+                  </a>
+                </Button>
+                <Button asChild className="bg-white text-black font-semibold rounded-lg px-6 py-2 sm:px-8 sm:py-3 transition hover:bg-gray-200 w-full sm:w-auto">
+                  <a href="https://www.snapchat.com/add/abddoashraf7" target="_blank" rel="noopener noreferrer">
+                    {t("location.snapchat")}
+                  </a>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
-    );
+      </div>
+
+      {/* Special Discount Section */}
+      <div
+        className="relative bg-cover bg-center rounded-xl overflow-hidden shadow-lg w-full lg:w-1/2 h-[500px] sm:h-[600px] lg:h-[650px]"
+        style={{ backgroundImage: "url('/Ritz2.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        <div className="relative flex flex-col justify-center items-center p-6 sm:p-12 text-center text-white w-full h-full">
+          <Card className="bg-transparent text-white w-full h-full flex flex-col justify-center">
+            <CardHeader className={`flex items-center gap-2 justify-center ${fontClass}`}>
+              <Percent className="w-6 h-6 text-white" />
+              <h2 className={`text-2xl sm:text-3xl font-bold text-white ${fontClass}`}>
+                {t("accommodation.specialDiscount")}
+              </h2>
+            </CardHeader>
+            <CardContent className={`space-y-3 text-center ${fontClass}`}>
+              <p className="text-lg sm:text-xl">{t("accommodation.discountDetails")}</p>
+              <div className="mt-4">
+                <Button asChild className="bg-white text-black font-semibold rounded-lg px-6 py-2 sm:px-8 sm:py-3 transition hover:bg-gray-200 w-full sm:w-auto">
+                  <a href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1738267348055&key=GRP&guestreslink2=true&app=resvlink"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    {t("accommodation.view")}
+                  </a>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+    </div>
+  );
 }
